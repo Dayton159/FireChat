@@ -6,40 +6,43 @@
 //
 
 import UIKit
+import Firebase
 
 class RegistrationViewController:UIViewController {
     
     //MARK: -  Properties
     
     private var viewModel = RegistrationViewModel()
+    private var profileImage:UIImage?
     
     private let plusPhotoButton:UIButton = {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "plusphoto"), for:  .normal)
         button.tintColor = .white
         button.addTarget(self, action: #selector(handleSelectPhoto), for: .touchUpInside)
+        button.imageView?.contentMode = .scaleAspectFill
         
         return button
     }()
     
     private lazy var emailContainerView:InputContainerView = {
         return InputContainerView(image: UIImage(named: "mail"),
-                                               textField: emailTextField)
+                                  textField: emailTextField)
     }()
     
     private lazy var fullnameContainerView:InputContainerView = {
         return InputContainerView(image: UIImage(named: "person"),
-                                               textField: fullnameTextField)
+                                  textField: fullnameTextField)
     }()
     
     private lazy var usernameContainerView:InputContainerView = {
         return InputContainerView(image: UIImage(named: "person"),
-                                               textField: usernameTextField)
+                                  textField: usernameTextField)
     }()
     
     private lazy var passwordContainerView:InputContainerView = {
         return InputContainerView(image: UIImage(named: "passLock"),
-                                               textField: passwordTextField)
+                                  textField: passwordTextField)
     }()
     
     private let emailTextField:CustomTextField = CustomTextField(placeHolder: "Email")
@@ -62,6 +65,7 @@ class RegistrationViewController:UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.setHeight(height: 50)
         button.isEnabled = false
+        button.addTarget(self, action: #selector(handleRegistration), for: .touchUpInside)
         
         return button
     }()
@@ -88,6 +92,61 @@ class RegistrationViewController:UIViewController {
     }
     
     //MARK: - Selectors
+    
+    @objc func handleRegistration() {
+        guard let email = emailTextField.text else {return}
+        guard let password = passwordTextField.text else {return}
+        guard let fullname = fullnameTextField.text else {return}
+        guard let username = usernameTextField.text?.lowercased() else {return}
+        guard let profileImage = profileImage else {return}
+        
+        guard let profileData = profileImage.jpegData(compressionQuality: 0.3) else {return}
+        
+        let fileName = NSUUID().uuidString
+        
+        let ref = Storage.storage().reference(withPath: "/profile_images/\(fileName)")
+        
+        ref.putData(profileData, metadata: nil) { (metadata, error) in
+            if let error = error {
+                print("DEBUG: Failed to upload image with error: \(error.localizedDescription)")
+                return
+            }
+            ref.downloadURL { (url, error) in
+                guard let imageURL =  url?.absoluteString else {return}
+                
+                
+                
+                Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+                    if let error = error {
+                        print("DEBUG: Failed to create user with error: \(error.localizedDescription)")
+                        return
+                    }
+                    guard let uid = result?.user.uid else {return}
+                    
+                    let data = ["email": email,
+                                "fullname":fullname,
+                                "profileImageURL":imageURL,
+                                "uid":uid,
+                                "username":username] as [String:Any]
+                    
+                    Firestore.firestore().collection("users").document(uid).setData(data) { (error) in
+                        
+                        if let error = error {
+                            print("DEBUG: Failed to upload user data with error: \(error.localizedDescription)")
+                            return
+                        }
+                        
+                        print("DEBUG: Did create user..")
+                    }
+                    
+                    
+                    
+                }
+                
+            }
+        }
+    }
+    
     @objc func handleSelectPhoto() {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
@@ -149,6 +208,7 @@ class RegistrationViewController:UIViewController {
 extension RegistrationViewController:UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.originalImage] as? UIImage
+        self.profileImage = image
         plusPhotoButton.setImage(image?.withRenderingMode(.alwaysOriginal), for: .normal)
         plusPhotoButton.layer.borderColor = UIColor.white.cgColor
         plusPhotoButton.layer.borderWidth = 3.0
