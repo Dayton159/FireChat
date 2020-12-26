@@ -12,7 +12,7 @@ struct LoginViewModel:AuthenticationProtocol {
     var password:String?
     
     var formIsValid:Bool {
-        // Only returns true if both email and password are empty
+        // Only returns true if both email and password are not empty
         return email?.isEmpty == false
             && password?.isEmpty == false
     }

@@ -18,7 +18,7 @@ struct RegistrationViewModel:AuthenticationProtocol {
     var username:String?
     
     var formIsValid:Bool {
-        // Only returns true if both email and password are empty
+        // Only returns true if both email and password are not empty
         return email?.isEmpty == false
             && password?.isEmpty == false
             && fullname?.isEmpty == false
