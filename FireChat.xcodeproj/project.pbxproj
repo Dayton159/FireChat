@@ -11,6 +11,7 @@
 		101904B62595BB9E008686DB /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101904B52595BB9E008686DB /* CustomTextField.swift */; };
 		101904B925962961008686DB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101904B825962961008686DB /* LoginViewModel.swift */; };
 		101904BC25966DD6008686DB /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101904BB25966DD6008686DB /* RegistrationViewModel.swift */; };
+		1035B50B25990EA300B35AC1 /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1035B50A25990EA300B35AC1 /* NewMessageController.swift */; };
 		10BA28F025978CEF00418144 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BA28EF25978CEF00418144 /* AuthService.swift */; };
 		10D1ABEB25944B1D00A28A51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D1ABEA25944B1D00A28A51 /* AppDelegate.swift */; };
 		10D1ABED25944B1D00A28A51 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D1ABEC25944B1D00A28A51 /* SceneDelegate.swift */; };
@@ -31,6 +32,7 @@
 		101904B52595BB9E008686DB /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		101904B825962961008686DB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		101904BB25966DD6008686DB /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		1035B50A25990EA300B35AC1 /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
 		10BA28EF25978CEF00418144 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		10D1ABE725944B1D00A28A51 /* FireChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10D1ABEA25944B1D00A28A51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			children = (
 				10D1AC0C2594E06C00A28A51 /* Authentication */,
 				10D1AC0725947DCD00A28A51 /* ConversationsViewController.swift */,
+				1035B50A25990EA300B35AC1 /* NewMessageController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				10D1AC152594EE7700A28A51 /* Extensions.swift in Sources */,
 				101904B925962961008686DB /* LoginViewModel.swift in Sources */,
 				101904B62595BB9E008686DB /* CustomTextField.swift in Sources */,
+				1035B50B25990EA300B35AC1 /* NewMessageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
