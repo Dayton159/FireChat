@@ -12,6 +12,8 @@
 		101904B925962961008686DB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101904B825962961008686DB /* LoginViewModel.swift */; };
 		101904BC25966DD6008686DB /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101904BB25966DD6008686DB /* RegistrationViewModel.swift */; };
 		1035B50B25990EA300B35AC1 /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1035B50A25990EA300B35AC1 /* NewMessageController.swift */; };
+		1037ECF5259C71EA00040308 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1037ECF4259C71EA00040308 /* User.swift */; };
+		1037ECF8259C728700040308 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1037ECF7259C728700040308 /* Service.swift */; };
 		10BA28F025978CEF00418144 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BA28EF25978CEF00418144 /* AuthService.swift */; };
 		10D1ABEB25944B1D00A28A51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D1ABEA25944B1D00A28A51 /* AppDelegate.swift */; };
 		10D1ABED25944B1D00A28A51 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D1ABEC25944B1D00A28A51 /* SceneDelegate.swift */; };
@@ -34,6 +36,8 @@
 		101904B825962961008686DB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		101904BB25966DD6008686DB /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		1035B50A25990EA300B35AC1 /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
+		1037ECF4259C71EA00040308 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1037ECF7259C728700040308 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		10BA28EF25978CEF00418144 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		10D1ABE725944B1D00A28A51 /* FireChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10D1ABEA25944B1D00A28A51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				10BA28EF25978CEF00418144 /* AuthService.swift */,
+				1037ECF7259C728700040308 /* Service.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -161,6 +166,7 @@
 		10D1AC0625947D7900A28A51 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1037ECF4259C71EA00040308 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -314,6 +320,8 @@
 				10D1ABEB25944B1D00A28A51 /* AppDelegate.swift in Sources */,
 				10DB34DB259BA99A003429D2 /* UserCell.swift in Sources */,
 				10D1ABED25944B1D00A28A51 /* SceneDelegate.swift in Sources */,
+				1037ECF5259C71EA00040308 /* User.swift in Sources */,
+				1037ECF8259C728700040308 /* Service.swift in Sources */,
 				10D1AC0E2594E09100A28A51 /* LoginViewController.swift in Sources */,
 				10D1AC0825947DCD00A28A51 /* ConversationsViewController.swift in Sources */,
 				10D1AC152594EE7700A28A51 /* Extensions.swift in Sources */,
