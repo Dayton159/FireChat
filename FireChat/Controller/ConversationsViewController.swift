@@ -38,6 +38,7 @@ class ConversationsViewController:UIViewController {
     
     @objc func showNewMessage() {
         let controller = NewMessageController()
+        controller.delegate = self
         let nav = UINavigationController(rootViewController: controller)
         nav.modalPresentationStyle = .fullScreen
         present(nav, animated: true, completion: nil)
@@ -126,6 +127,19 @@ extension ConversationsViewController:UITableViewDataSource {
         cell.textLabel?.text = "Test Cell"
         
         return cell
+    }
+    
+    
+}
+    
+    //MARK: - NewMessageControllerDelegate
+
+extension ConversationsViewController:NewMessageControllerDelegate {
+    func controller(_ controller: NewMessageController, wantsToChatWith user: User) {
+        controller.dismiss(animated: true, completion: nil)
+        
+        let chat = ChatViewController(user: user)
+        navigationController?.pushViewController(chat, animated: true)
     }
     
     
