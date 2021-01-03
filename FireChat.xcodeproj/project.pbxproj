@@ -16,6 +16,7 @@
 		1037ECF8259C728700040308 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1037ECF7259C728700040308 /* Service.swift */; };
 		1037ECFB259CE34A00040308 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1037ECFA259CE34A00040308 /* ChatViewController.swift */; };
 		1037ECFE259CFD9C00040308 /* CustomInputAccesoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1037ECFD259CFD9C00040308 /* CustomInputAccesoryView.swift */; };
+		1085F7D625A0FC8700E23AEB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1085F7D525A0FC8700E23AEB /* Constants.swift */; };
 		10BA28F025978CEF00418144 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BA28EF25978CEF00418144 /* AuthService.swift */; };
 		10D1ABEB25944B1D00A28A51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D1ABEA25944B1D00A28A51 /* AppDelegate.swift */; };
 		10D1ABED25944B1D00A28A51 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D1ABEC25944B1D00A28A51 /* SceneDelegate.swift */; };
@@ -45,6 +46,7 @@
 		1037ECF7259C728700040308 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		1037ECFA259CE34A00040308 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		1037ECFD259CFD9C00040308 /* CustomInputAccesoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputAccesoryView.swift; sourceTree = "<group>"; };
+		1085F7D525A0FC8700E23AEB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		10BA28EF25978CEF00418144 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		10D1ABE725944B1D00A28A51 /* FireChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10D1ABEA25944B1D00A28A51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				10D1AC142594EE7700A28A51 /* Extensions.swift */,
+				1085F7D525A0FC8700E23AEB /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10D1AC122594E1E500A28A51 /* RegistrationViewController.swift in Sources */,
+				1085F7D625A0FC8700E23AEB /* Constants.swift in Sources */,
 				101904BC25966DD6008686DB /* RegistrationViewModel.swift in Sources */,
 				101904B32595B766008686DB /* InputContainerView.swift in Sources */,
 				10BA28F025978CEF00418144 /* AuthService.swift in Sources */,
