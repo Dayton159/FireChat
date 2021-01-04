@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10021C3B25A32B7B00A63A05 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10021C3A25A32B7B00A63A05 /* ProfileViewController.swift */; };
+		10021C3E25A32C5D00A63A05 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10021C3D25A32C5D00A63A05 /* ProfileHeader.swift */; };
 		100B21B625A24327007ABB43 /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100B21B525A24327007ABB43 /* ConversationCell.swift */; };
 		100B21B925A24697007ABB43 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100B21B825A24697007ABB43 /* ConversationViewModel.swift */; };
 		101904B32595B766008686DB /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101904B22595B766008686DB /* InputContainerView.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10021C3A25A32B7B00A63A05 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		10021C3D25A32C5D00A63A05 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		100B21B525A24327007ABB43 /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
 		100B21B825A24697007ABB43 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
 		101904B22595B766008686DB /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 				10D1AC0725947DCD00A28A51 /* ConversationsViewController.swift */,
 				1035B50A25990EA300B35AC1 /* NewMessageController.swift */,
 				1037ECFA259CE34A00040308 /* ChatViewController.swift */,
+				10021C3A25A32B7B00A63A05 /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -182,6 +187,7 @@
 				1037ECFD259CFD9C00040308 /* CustomInputAccesoryView.swift */,
 				10E0CF50259F260600BD023E /* MessageCell.swift */,
 				100B21B525A24327007ABB43 /* ConversationCell.swift */,
+				10021C3D25A32C5D00A63A05 /* ProfileHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -354,10 +360,12 @@
 				1037ECFB259CE34A00040308 /* ChatViewController.swift in Sources */,
 				10D1AC0825947DCD00A28A51 /* ConversationsViewController.swift in Sources */,
 				1037ECFE259CFD9C00040308 /* CustomInputAccesoryView.swift in Sources */,
+				10021C3E25A32C5D00A63A05 /* ProfileHeader.swift in Sources */,
 				10D1AC152594EE7700A28A51 /* Extensions.swift in Sources */,
 				101904B925962961008686DB /* LoginViewModel.swift in Sources */,
 				100B21B625A24327007ABB43 /* ConversationCell.swift in Sources */,
 				10E0CF54259F5F4500BD023E /* Message.swift in Sources */,
+				10021C3B25A32B7B00A63A05 /* ProfileViewController.swift in Sources */,
 				101904B62595BB9E008686DB /* CustomTextField.swift in Sources */,
 				1035B50B25990EA300B35AC1 /* NewMessageController.swift in Sources */,
 			);

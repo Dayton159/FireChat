@@ -54,7 +54,10 @@ class ConversationsViewController:UIViewController {
     }
     
     @objc func showProfile() {
-       logOut()
+       let controller = ProfileViewController()
+        let nav = UINavigationController(rootViewController: controller)
+        nav.modalPresentationStyle = .fullScreen
+        present(nav, animated: true, completion: nil)
     }
     
     //MARK: - API
