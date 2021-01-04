@@ -27,6 +27,12 @@ class ProfileViewController: UITableViewController {
        return header
     }()
     
+    private lazy var footerView:ProfileFooter = {
+        let footer = ProfileFooter(frame: .init(x: 0, y: 0, width: view.frame.width, height: 100))
+        
+        return footer
+    }()
+    
     
     // MARK: - Lifecycle
     
@@ -64,7 +70,7 @@ class ProfileViewController: UITableViewController {
         
         tableView.tableHeaderView = headerView
         tableView.register(ProfileCell.self, forCellReuseIdentifier: reuseIdentifier)
-        tableView.tableFooterView = UIView()
+        tableView.tableFooterView = footerView
         tableView.contentInsetAdjustmentBehavior = .never
         
         tableView.rowHeight = 64
