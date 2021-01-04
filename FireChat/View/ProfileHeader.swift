@@ -6,8 +6,21 @@
 //
 
 import UIKit
+import SDWebImage
+
+protocol ProfileHeaderDelegate:class {
+    func dismissController()
+}
 
 class ProfileHeader: UIView {
+    
+    weak var delegate:ProfileHeaderDelegate?
+    
+    var user:User? {
+        didSet {
+            populateUserData()
+        }
+    }
     
     //MARK: - Properties
     
@@ -71,7 +84,7 @@ class ProfileHeader: UIView {
     //MARK: - Selectors
     
     @objc func handleDismissal() {
-        
+        delegate?.dismissController()
     }
     
     //MARK: - Helpers
@@ -103,5 +116,16 @@ class ProfileHeader: UIView {
            gradient.locations = [0, 1]
             self.layer.addSublayer(gradient)
             gradient.frame = self.bounds
+    }
+    
+    func populateUserData() {
+        guard let user = user else {return}
+        
+        fullnameLabel.text = user.fullname
+        usernameLabel.text = "@" + user.username
+        
+        guard let url = URL(string: user.profileImageUrl) else {return}
+        
+        profileImageView.sd_setImage(with: url)
     }
 }

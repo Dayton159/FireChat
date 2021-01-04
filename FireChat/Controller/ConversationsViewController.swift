@@ -54,7 +54,7 @@ class ConversationsViewController:UIViewController {
     }
     
     @objc func showProfile() {
-       let controller = ProfileViewController()
+        let controller = ProfileViewController(style: .insetGrouped)
         let nav = UINavigationController(rootViewController: controller)
         nav.modalPresentationStyle = .fullScreen
         present(nav, animated: true, completion: nil)
