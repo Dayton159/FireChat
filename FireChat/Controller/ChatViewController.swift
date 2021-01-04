@@ -58,6 +58,8 @@ class ChatViewController: UICollectionViewController {
         Service.fetchMessages(forUser: user) { messages in
             self.messages = messages
             self.collectionView.reloadData()
+            self.collectionView.scrollToItem(at: [0, self.messages.count - 1],
+                                             at: .bottom, animated: true)
         }
     }
     
@@ -69,6 +71,8 @@ class ChatViewController: UICollectionViewController {
         
         collectionView.register(MessageCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         collectionView.alwaysBounceVertical = true
+        
+        collectionView.keyboardDismissMode = .interactive
     }
 }
 
@@ -93,7 +97,21 @@ extension ChatViewController:UICollectionViewDelegateFlowLayout {
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 50)
+//        return CGSize(width: view.frame.width, height: 50)
+        
+        let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 50)
+        let estimatedSizeCell = MessageCell(frame: frame)
+        estimatedSizeCell.message = messages[indexPath.row]
+                // if the height is less or equal to 50, its not gonna lay anything out
+                // but if it's greater than that it will call the func
+        estimatedSizeCell.layoutIfNeeded()
+        
+        let targetSize = CGSize(width: view.frame.width, height: 1000)
+                // help figure out how tall cell will be based on the estimatedSizeCell that was populated with messages
+                // because the textview are filling out the frame it sort of figures out the height of all that stuff
+        let estimatedSize = estimatedSizeCell.systemLayoutSizeFitting(targetSize)
+        
+        return .init(width: view.frame.width, height: estimatedSize.height)
     }
 }
 
