@@ -10,6 +10,10 @@ import Firebase
 
 private let reuseIdentifier = "ProfileCell"
 
+protocol ProfileViewControllerDelegate:class {
+    func handleLogout()
+}
+
 class ProfileViewController: UITableViewController {
     
     private var user:User? {
@@ -17,6 +21,8 @@ class ProfileViewController: UITableViewController {
             headerView.user = user
         }
     }
+    
+    weak var delegate: ProfileViewControllerDelegate?
     
     // MARK: - Properties
     
@@ -29,6 +35,7 @@ class ProfileViewController: UITableViewController {
     
     private lazy var footerView:ProfileFooter = {
         let footer = ProfileFooter(frame: .init(x: 0, y: 0, width: view.frame.width, height: 100))
+        footer.delegate = self
         
         return footer
     }()
@@ -78,6 +85,7 @@ class ProfileViewController: UITableViewController {
     }
 }
 
+//MARK: - UITableViewDataSource
 
 extension ProfileViewController {
     
@@ -96,14 +104,48 @@ extension ProfileViewController {
     }
 }
 
+//MARK: - UITableViewDelegate
+
 extension ProfileViewController {
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let viewModel = ProfileViewModel(rawValue: indexPath.row) else {return}
+        
+        print("DEBUG: Handle Action for \(viewModel.description)")
+    }
+    
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return UIView()
     }
 }
 
+
+//MARK: - ProfileHeaderDelegate
+
 extension ProfileViewController: ProfileHeaderDelegate {
     func dismissController() {
         dismiss(animated: true, completion: nil)
+    }
+}
+
+//MARK: - ProfileFooterDelegate
+
+extension ProfileViewController: ProfileFooterDelegate {
+    func handleLogout() {
+        
+        let alert = UIAlertController(title: nil, message: "Are you sure you want to logout?", preferredStyle: .actionSheet)
+        
+        let action = UIAlertAction(title: "Log Out", style: .destructive) { _ in
+            self.dismiss(animated: true) {
+                self.delegate?.handleLogout()
+            }
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alert.addAction(action)
+        alert.addAction(cancel)
+        
+        present(alert, animated: true, completion: nil)
     }
 }
