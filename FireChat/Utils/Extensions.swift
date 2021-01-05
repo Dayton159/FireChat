@@ -160,4 +160,14 @@ extension UIViewController {
         navigationController?.navigationBar.overrideUserInterfaceStyle = .dark
         self.navigationController?.navigationBar.barStyle = .black
     }
+    
+    func showError(_ errorMessage:String) {
+        let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+        
+        alert.addAction(action)
+        
+        present(alert, animated: true, completion: nil)
+    }
 }

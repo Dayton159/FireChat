@@ -64,17 +64,21 @@ class ConversationsViewController:UIViewController {
     //MARK: - API
     
     func fetchConversations() {
+        showLoader(true)
+        
         Service.fetchConversations { conversations in
+            DispatchQueue.main.async {
+               
+            self.showLoader(false)
             self.conversations = conversations
             self.tableView.reloadData()
+            }
         }
     }
     
     func authenticateUser() {
         if Auth.auth().currentUser?.uid == nil {
             presentLoginScreen()
-        } else {
-            print("logged in")
         }
     }
     
@@ -92,6 +96,7 @@ class ConversationsViewController:UIViewController {
     func presentLoginScreen() {
         DispatchQueue.main.async {
             let controller = LoginViewController()
+            controller.delegate = self
             let nav = UINavigationController(rootViewController: controller)
             nav.modalPresentationStyle = .fullScreen
             self.present(nav, animated: true, completion: nil)
@@ -158,7 +163,7 @@ extension ConversationsViewController:UITableViewDataSource {
 
 extension ConversationsViewController:NewMessageControllerDelegate {
     func controller(_ controller: NewMessageController, wantsToChatWith user: User) {
-        controller.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
         
        showChatController(forUser: user)
     }
@@ -167,5 +172,15 @@ extension ConversationsViewController:NewMessageControllerDelegate {
 extension ConversationsViewController: ProfileViewControllerDelegate {
     func handleLogout() {
         logOut()
+    }
+}
+
+//MARK: - AuthenticationDelegate
+
+extension ConversationsViewController: AuthenticationDelegate {
+    func authenticationComplete() {
+        dismiss(animated: true, completion: nil)
+        configureUI()
+        fetchConversations()
     }
 }

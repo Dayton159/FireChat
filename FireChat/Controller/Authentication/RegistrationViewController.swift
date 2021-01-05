@@ -10,6 +10,8 @@ import Firebase
 
 class RegistrationViewController:UIViewController {
     
+    weak var delegate: AuthenticationDelegate?
+    
     //MARK: -  Properties
     
     private var viewModel = RegistrationViewModel()
@@ -21,6 +23,7 @@ class RegistrationViewController:UIViewController {
         button.tintColor = .white
         button.addTarget(self, action: #selector(handleSelectPhoto), for: .touchUpInside)
         button.imageView?.contentMode = .scaleAspectFill
+        button.imageView?.anchor(top: button.topAnchor, left: button.leftAnchor,bottom: button.bottomAnchor, right: button.rightAnchor)
         
         return button
     }()
@@ -108,12 +111,12 @@ class RegistrationViewController:UIViewController {
         
         AuthService.shared.createUser(credentials: credentials) { (error) in
             if let error = error {
-                print("DEBUG: failed to create user with error: \(error.localizedDescription)")
                 self.showLoader(false)
+                self.showError(error.localizedDescription)
                 return
             }
             self.showLoader(false)
-            self.dismiss(animated: true, completion: nil)
+            self.delegate?.authenticationComplete()
         }
       
     }
