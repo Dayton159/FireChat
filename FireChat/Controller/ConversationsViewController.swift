@@ -17,6 +17,8 @@ class ConversationsViewController:UIViewController {
     private let tableView = UITableView()
     private var conversations = [Conversation]()
     
+    private var conversationsDictionary = [String:Conversation]()
+    
     private let newMessageButton:UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(systemName: "plus"), for: .normal)
@@ -67,12 +69,13 @@ class ConversationsViewController:UIViewController {
         showLoader(true)
         
         Service.fetchConversations { conversations in
-            DispatchQueue.main.async {
-               
-            self.showLoader(false)
-            self.conversations = conversations
-            self.tableView.reloadData()
+            conversations.forEach { conversation in
+                let message = conversation.message
+                self.conversationsDictionary[message.chatPartnerId] = conversation
             }
+            self.showLoader(false)
+            self.conversations = Array(self.conversationsDictionary.values)
+            self.tableView.reloadData()
         }
     }
     
