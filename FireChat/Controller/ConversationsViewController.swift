@@ -74,7 +74,7 @@ class ConversationsViewController:UIViewController {
                 self.conversationsDictionary[message.chatPartnerId] = conversation
             }
             self.showLoader(false)
-            self.conversations = Array(self.conversationsDictionary.values)
+            self.conversations = Array(self.conversationsDictionary.values).sorted{ $0.message.timestamp.dateValue() > $1.message.timestamp.dateValue() }
             self.tableView.reloadData()
         }
     }

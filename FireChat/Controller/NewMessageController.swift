@@ -52,7 +52,7 @@ class NewMessageController:UITableViewController {
         Service.fetchUser { (users) in
             self.showLoader(false)
             
-            self.users = users
+            self.users = users.sorted{$0.username < $1.username}
             self.tableView.reloadData()
         }
     }
