@@ -1,3 +1,3 @@
 # FireChat
 
-<img src="appPreview/appPreview.gif" width=450 height=550>
+<img src="appPreview/appPreview.gif" width=450 height=600>
