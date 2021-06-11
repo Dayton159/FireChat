@@ -13,7 +13,7 @@ protocol AuthenticationControllerProtocol {
     func checkFormStatus()
 }
 
-protocol AuthenticationDelegate:class {
+protocol AuthenticationDelegate:AnyObject {
     func authenticationComplete()
 }
 

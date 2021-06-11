@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol ProfileFooterDelegate:class {
+protocol ProfileFooterDelegate:AnyObject {
     func handleLogout()
 }
 

@@ -27,7 +27,6 @@
 		10BA28F025978CEF00418144 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BA28EF25978CEF00418144 /* AuthService.swift */; };
 		10D1ABEB25944B1D00A28A51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D1ABEA25944B1D00A28A51 /* AppDelegate.swift */; };
 		10D1ABED25944B1D00A28A51 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D1ABEC25944B1D00A28A51 /* SceneDelegate.swift */; };
-		10D1ABEF25944B1D00A28A51 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D1ABEE25944B1D00A28A51 /* ViewController.swift */; };
 		10D1ABF225944B1D00A28A51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10D1ABF025944B1D00A28A51 /* Main.storyboard */; };
 		10D1ABF425944B1E00A28A51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10D1ABF325944B1E00A28A51 /* Assets.xcassets */; };
 		10D1ABF725944B1E00A28A51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10D1ABF525944B1E00A28A51 /* LaunchScreen.storyboard */; };
@@ -65,7 +64,6 @@
 		10D1ABE725944B1D00A28A51 /* FireChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10D1ABEA25944B1D00A28A51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10D1ABEC25944B1D00A28A51 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		10D1ABEE25944B1D00A28A51 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		10D1ABF125944B1D00A28A51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		10D1ABF325944B1E00A28A51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10D1ABF625944B1E00A28A51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 				10D1ABFF25947D6B00A28A51 /* Utils */,
 				10D1ABEA25944B1D00A28A51 /* AppDelegate.swift */,
 				10D1ABEC25944B1D00A28A51 /* SceneDelegate.swift */,
-				10D1ABEE25944B1D00A28A51 /* ViewController.swift */,
 				10D1ABF025944B1D00A28A51 /* Main.storyboard */,
 				10D1ABF325944B1E00A28A51 /* Assets.xcassets */,
 				10D1ABF525944B1E00A28A51 /* LaunchScreen.storyboard */,
@@ -358,7 +355,6 @@
 				101904B32595B766008686DB /* InputContainerView.swift in Sources */,
 				10BA28F025978CEF00418144 /* AuthService.swift in Sources */,
 				10E0CF57259F623A00BD023E /* MessageViewModel.swift in Sources */,
-				10D1ABEF25944B1D00A28A51 /* ViewController.swift in Sources */,
 				10021C4725A3A7B600A63A05 /* ProfileFooter.swift in Sources */,
 				10D1ABEB25944B1D00A28A51 /* AppDelegate.swift in Sources */,
 				10DB34DB259BA99A003429D2 /* UserCell.swift in Sources */,

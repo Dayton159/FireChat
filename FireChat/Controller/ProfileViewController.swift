@@ -10,7 +10,7 @@ import Firebase
 
 private let reuseIdentifier = "ProfileCell"
 
-protocol ProfileViewControllerDelegate:class {
+protocol ProfileViewControllerDelegate:AnyObject {
     func handleLogout()
 }
 

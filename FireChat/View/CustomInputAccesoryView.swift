@@ -8,7 +8,7 @@
 import UIKit
 
 
-protocol CustomInputAccessoryViewDelegate: class {
+protocol CustomInputAccessoryViewDelegate: AnyObject {
     func inputView(_ inputView: CustomInputAccesoryView, wantsToSend message:String)
 }
 
